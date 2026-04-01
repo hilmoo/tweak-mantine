@@ -1,10 +1,4 @@
 export { TWEAK_GEIST_COLORS } from "./color";
 export { TWEAK_CORE_THEME } from "./core/theme";
-export { TWEAK_CODE_HIGHLIGHT_THEME } from "./ext/code-highlight/theme";
-export { TWEAK_DROPZONE_THEME } from "./ext/dropzone/theme";
-export { TWEAK_SPOTLIGHT_THEME } from "./ext/spotlight/theme";
-export { TWEAK_RICH_TEXT_EDITOR_THEME } from "./ext/tiptap/theme";
-export { TWEAK_CHARTS_THEME } from "./ext/charts/theme";
-export { TWEAK_DATES_THEME } from "./ext/dates/theme";
 export * from "./css-variables";
 export * from "./color-function";

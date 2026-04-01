@@ -5,7 +5,15 @@ import { generateScopedName } from "hash-css-selector";
 import path from "node:path";
 
 export default {
-  input: "src/index.ts",
+  input: [
+    "src/index.ts",
+    "src/ext/charts/theme.ts",
+    "src/ext/code-highlight/theme.ts",
+    "src/ext/dates/theme.ts",
+    "src/ext/dropzone/theme.ts",
+    "src/ext/spotlight/theme.ts",
+    "src/ext/tiptap/theme.ts",
+  ],
   output: [
     {
       dir: "dist",

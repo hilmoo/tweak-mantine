@@ -1,15 +1,13 @@
 import { createTheme, mergeThemeOverrides } from "@mantine/core";
-import {
-  TWEAK_CORE_THEME,
-  TWEAK_CODE_HIGHLIGHT_THEME,
-  TWEAK_DROPZONE_THEME,
-  TWEAK_SPOTLIGHT_THEME,
-  TWEAK_RICH_TEXT_EDITOR_THEME,
-  TWEAK_CHARTS_THEME,
-  TWEAK_DATES_THEME,
-} from "./tweak-mantine";
+import { TWEAK_CORE_THEME } from "./tweak-mantine";
 
 import { TWEAK_GEIST_COLORS } from "./tweak-mantine/color-dev";
+import { TWEAK_CODE_HIGHLIGHT_THEME } from "./tweak-mantine/ext/code-highlight/theme";
+import { TWEAK_DROPZONE_THEME } from "./tweak-mantine/ext/dropzone/theme";
+import { TWEAK_SPOTLIGHT_THEME } from "./tweak-mantine/ext/spotlight/theme";
+import { TWEAK_RICH_TEXT_EDITOR_THEME } from "./tweak-mantine/ext/tiptap/theme";
+import { TWEAK_CHARTS_THEME } from "./tweak-mantine/ext/charts/theme";
+import { TWEAK_DATES_THEME } from "./tweak-mantine/ext/dates/theme";
 
 const component = createTheme({
   fontFamily: "Geist",

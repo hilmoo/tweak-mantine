@@ -8,10 +8,6 @@
   "sideEffects": [
     "*.css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hilmoo/tweak-mantine.git"
-  },
   "main": "./dist/esm/index.mjs",
   "module": "./dist/esm/index.mjs",
   "types": "./dist/lib/index.d.ts",
@@ -21,27 +17,71 @@
       "import": "./dist/esm/index.mjs",
       "default": "./dist/esm/index.mjs"
     },
+    "./charts": {
+      "types": "./dist/lib/ext/charts/theme.d.ts",
+      "import": "./dist/esm/ext/charts/theme.mjs",
+      "default": "./dist/esm/ext/charts/theme.mjs"
+    },
+    "./code-highlight": {
+      "types": "./dist/lib/ext/code-highlight/theme.d.ts",
+      "import": "./dist/esm/ext/code-highlight/theme.mjs",
+      "default": "./dist/esm/ext/code-highlight/theme.mjs"
+    },
+    "./dates": {
+      "types": "./dist/lib/ext/dates/theme.d.ts",
+      "import": "./dist/esm/ext/dates/theme.mjs",
+      "default": "./dist/esm/ext/dates/theme.mjs"
+    },
+    "./dropzone": {
+      "types": "./dist/lib/ext/dropzone/theme.d.ts",
+      "import": "./dist/esm/ext/dropzone/theme.mjs",
+      "default": "./dist/esm/ext/dropzone/theme.mjs"
+    },
+    "./spotlight": {
+      "types": "./dist/lib/ext/spotlight/theme.d.ts",
+      "import": "./dist/esm/ext/spotlight/theme.mjs",
+      "default": "./dist/esm/ext/spotlight/theme.mjs"
+    },
+    "./tiptap": {
+      "types": "./dist/lib/ext/tiptap/theme.d.ts",
+      "import": "./dist/esm/ext/tiptap/theme.mjs",
+      "default": "./dist/esm/ext/tiptap/theme.mjs"
+    },
     "./styles/*": "./dist/styles/*"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "build": "rollup -c && tsc --project tsconfig.build.json && pnpx tsx ./scripts/copy-styles.ts"
-  },
   "devDependencies": {
-    "@mantine/charts": "^9.0.0",
-    "@mantine/code-highlight": "^9.0.0",
-    "@mantine/core": "^9.0.0",
-    "@mantine/dates": "^9.0.0",
-    "@mantine/dropzone": "^9.0.0",
-    "@mantine/spotlight": "^9.0.0",
-    "@mantine/tiptap": "^9.0.0",
     "typescript-plugin-css-modules": "^5.2.0"
   },
   "peerDependencies": {
-    "@mantine/core": "^9.0.0"
+    "@mantine/core": "^9.0.0",
+    "@mantine/charts": "^9.0.0",
+    "@mantine/code-highlight": "^9.0.0",
+    "@mantine/dates": "^9.0.0",
+    "@mantine/dropzone": "^9.0.0",
+    "@mantine/spotlight": "^9.0.0",
+    "@mantine/tiptap": "^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@mantine/charts": {
+      "optional": true
+    },
+    "@mantine/code-highlight": {
+      "optional": true
+    },
+    "@mantine/dates": {
+      "optional": true
+    },
+    "@mantine/dropzone": {
+      "optional": true
+    },
+    "@mantine/spotlight": {
+      "optional": true
+    },
+    "@mantine/tiptap": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "rollup -c && tsc --project tsconfig.build.json && pnpx tsx ./scripts/copy-styles.ts"
   }
 }
