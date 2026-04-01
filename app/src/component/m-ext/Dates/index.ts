@@ -771,11 +771,11 @@ export const data: DataResult = {
       demo: [
         {
           demoName: "get-shared-picker-demos",
-          demoComponent: getSharedPickerDemos_shared,
+          demoComponent: getSharedPickerDemos_shared as unknown as MantineDemo,
         },
         {
           demoName: "get-shared-picker-input-demos",
-          demoComponent: getSharedPickerInputDemos_shared,
+          demoComponent: getSharedPickerInputDemos_shared as unknown as MantineDemo,
         },
       ],
     },
