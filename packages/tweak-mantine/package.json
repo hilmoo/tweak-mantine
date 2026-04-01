@@ -1,9 +1,9 @@
 {
-  "name": "@hilmoo/tweak-mantine",
+  "name": "@hilmo/tweak-mantine",
   "description": "tweak mantine theme",
   "version": "0.0.1",
   "license": "MIT",
-  "author": "hilmoo",
+  "author": "hilmo",
   "type": "module",
   "sideEffects": [
     "*.css"
