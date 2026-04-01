@@ -1,0 +1,56 @@
+{
+  "name": "@mantinex/demo",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Demo base components used on *.mantine.dev websites",
+  "keywords": [
+    "react",
+    "ui"
+  ],
+  "homepage": "https://mantine.dev/",
+  "license": "MIT",
+  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mantinedev/mantine.git",
+    "directory": "packages/@mantinex/demo"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/esm/index.mjs",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "default": "./dist/esm/index.mjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./styles.layer.css": "./dist/styles.layer.css"
+  },
+  "scripts": {
+    "build": "rollup -c && tsc --project tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@hilmoo/tweak-mantine": "workspace:*",
+    "@mantine/code-highlight": ">=8.0.0",
+    "@mantine/core": ">=8.0.0",
+    "@mantine/hooks": ">=8.0.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "shiki": "^3.12.2"
+  },
+  "peerDependencies": {
+    "@hilmoo/tweak-mantine": "workspace:*",
+    "@mantine/code-highlight": ">=8.0.0",
+    "@mantine/core": ">=8.0.0",
+    "@mantine/hooks": ">=8.0.0",
+    "@mantinex/dev-icons": ">=2.0.0",
+    "react": "^18.x || ^19.x",
+    "react-dom": "^18.x || ^19.x",
+    "shiki": "^3.11.0"
+  }
+}

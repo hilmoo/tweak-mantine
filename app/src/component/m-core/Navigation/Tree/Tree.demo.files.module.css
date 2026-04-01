@@ -1,0 +1,22 @@
+.root {
+  font-family: var(--mantine-font-family-monospace);
+  font-size: 13px;
+}
+
+.leaf {
+  padding-block: 3px;
+
+  &[data-selected] {
+    font-weight: 700;
+    background-color: var(--mantine-color-blue-dev-dev-light) !important;
+    color: var(--mantine-color-bright);
+  }
+
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-dev-dev-0),
+      var(--mantine-color-gray-dev-dev-6)
+    );
+    color: var(--mantine-color-bright);
+  }
+}

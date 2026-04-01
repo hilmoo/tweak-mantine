@@ -1,0 +1,15 @@
+.actionsList {
+  border-color: var(--mantine-color-default-border);
+}
+
+.action {
+  &:where(:not([data-selected])) {
+    @mixin hover {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.footer {
+  border-color: var(--mantine-color-default-border);
+}

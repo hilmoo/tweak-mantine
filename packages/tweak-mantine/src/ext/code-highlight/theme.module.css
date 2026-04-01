@@ -1,0 +1,13 @@
+.border {
+  &:where([data-with-border]) {
+    border: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.file {
+  border-color: var(--mantine-color-default-border) !important;
+
+  &:where([data-active]) {
+    background-color: var(--mantine-color-default) !important;
+  }
+}

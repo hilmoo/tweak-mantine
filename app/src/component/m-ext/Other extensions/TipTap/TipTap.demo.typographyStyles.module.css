@@ -1,0 +1,14 @@
+.root {
+  h2 {
+    color: light-dark(var(--mantine-color-gray-dev-dev-6), var(--mantine-color-gray-dev-dev-2));
+    font-size: var(--mantine-font-size-xl);
+  }
+
+  p {
+    font-size: var(--mantine-font-size-lg);
+  }
+
+  a {
+    color: var(--mantine-color-red-dev-dev-6);
+  }
+}

@@ -1,0 +1,25 @@
+.scrollbar {
+  &,
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-dev-dev-0),
+      var(--mantine-color-gray-dev-dev-6)
+    );
+  }
+
+  &[data-orientation="vertical"] .thumb {
+    background-color: var(--mantine-color-red-dev-dev-6);
+  }
+
+  &[data-orientation="horizontal"] .thumb {
+    background-color: var(--mantine-color-blue-dev-dev-6);
+  }
+}
+
+.corner {
+  background-color: light-dark(
+    var(--mantine-color-gray-dev-dev-0),
+    var(--mantine-color-gray-dev-dev-6)
+  );
+  opacity: 1;
+}

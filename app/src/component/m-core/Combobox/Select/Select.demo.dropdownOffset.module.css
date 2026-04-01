@@ -1,0 +1,22 @@
+.dropdown {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-color: light-dark(
+    var(--mantine-color-gray-dev-dev-4),
+    var(--mantine-color-gray-dev-dev-4)
+  );
+  border-top: 0;
+}
+
+.input {
+  transition: none;
+
+  &[data-expanded] {
+    border-color: light-dark(
+      var(--mantine-color-gray-dev-dev-4),
+      var(--mantine-color-gray-dev-dev-4)
+    );
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

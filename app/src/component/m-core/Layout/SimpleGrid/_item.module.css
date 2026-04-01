@@ -1,0 +1,14 @@
+.item {
+  background-color: light-dark(
+    var(--mantine-color-blue-dev-dev-0),
+    var(--mantine-color-gray-dev-dev-4)
+  );
+  padding: var(--mantine-spacing-md);
+}
+
+.label {
+  color: light-dark(var(--mantine-color-blue-dev-dev-6), var(--mantine-color-dimmed));
+  font-size: var(--mantine-font-size-xl);
+  font-weight: bold;
+  text-align: center;
+}

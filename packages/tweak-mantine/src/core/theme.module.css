@@ -1,0 +1,568 @@
+.angle-slider-root {
+  background-color: var(--mantine-neutral-color-0);
+
+  &:focus-within {
+    outline-color: var(--mantine-color-default-border);
+  }
+}
+
+.angle-slider-mark {
+  &::before {
+    background-color: var(--mantine-neutral-color-6);
+  }
+}
+
+.angle-slider-thumb {
+  &::before {
+    background-color: var(--mantine-neutral-color-7);
+  }
+}
+
+.badge-root {
+  &:where([data-variant="dot"]) {
+    background-color: var(--mantine-primary-color-light);
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.breadcrumbs-separator {
+  color: var(--mantine-primary-color-8);
+}
+
+.color-swatch-root {
+  --alpha-overlay-color: var(--mantine-primary-color-8);
+  --alpha-overlay-bg: var(--mantine-primary-color-filled);
+}
+
+.checkbox-card-card {
+  &:where([data-with-border]) {
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.checkbox-indicator-indicator {
+  border-color: var(--mantine-color-default-border);
+  background-color: var(--mantine-color-body-secondary);
+
+  &[data-disabled] {
+    &[data-checked] {
+      > :first-child {
+        color: var(--mantine-color-disabled-color) !important;
+      }
+    }
+  }
+}
+
+.divider-label {
+  color: var(--mantine-neutral-color-8);
+}
+
+.fieldset-root {
+  &:where([data-variant="filled"]) {
+    background-color: var(--mantine-neutral-color-0);
+    border-color: var(--mantine-color-default-border);
+  }
+
+  &:where([data-variant="default"]) {
+    background-color: var(--mantine-color-body-secondary);
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.kbd-root {
+  background-color: var(--mantine-color-body-secondary);
+  border-color: var(--mantine-color-default-border);
+  color: var(--mantine-color-text);
+}
+
+.paper-root {
+  &:where([data-with-border]) {
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.card-root {
+  background-color: var(--mantine-color-body-secondary);
+}
+
+.card-section {
+  border-color: var(--mantine-color-default-border);
+}
+
+.progress-root {
+  background-color: var(--mantine-primary-color-light);
+}
+
+.radio-card-root {
+  &:where([data-with-border]) {
+    border: 1px solid transparent;
+    border-color: var(--mantine-color-default-border);
+  }
+}
+
+.radio-indicator-indicator {
+  border-color: var(--mantine-color-default-border);
+  background-color: var(--mantine-color-body-secondary);
+}
+
+.rating-star-symbol {
+  &:not(:where([data-filled])) {
+    fill: var(--mantine-neutral-color-3);
+    stroke: var(--mantine-neutral-color-3);
+  }
+}
+
+.scroll-area-scrollbar {
+  @mixin hover {
+    background-color: var(--mantine-color-body-secondary);
+  }
+}
+
+.scroll-area-corner {
+  background-color: var(--mantine-color-body-secondary);
+}
+
+.segmented-control-root {
+  background-color: var(--mantine-neutral-color-0);
+}
+
+.segmented-control-label {
+  color: var(--mantine-color-text);
+  &:where(:not([data-active])) {
+    color: var(--mantine-neutral-color-8);
+    @mixin hover {
+      color: var(--mantine-neutral-color-9);
+    }
+  }
+}
+
+.segmented-control-control {
+  --separator-color: var(--mantine-color-default-border);
+}
+
+.skeleton-root {
+  &::after {
+    background-color: var(--mantine-neutral-color-3);
+  }
+}
+
+.table-th-vertical {
+  background-color: var(--mantine-neutral-color-0);
+}
+
+.timeline-item {
+  &:not(:where([data-line-active]))::before {
+    border-inline-start-color: var(--mantine-color-default-border);
+  }
+}
+
+.timeline-item-bullet {
+  &:where(:not([data-active])) {
+    &:where([data-with-child]) {
+      border-color: var(--mantine-color-default-border);
+      background-color: var(--mantine-color-default-border);
+    }
+  }
+}
+
+.slider-label {
+  color: var(--mantine-color-text);
+  background-color: var(--mantine-color-default-border);
+}
+
+.slider-track {
+  &::before {
+    background-color: var(--track-bg, var(--mantine-neutral-color-0));
+  }
+}
+
+.slider-bar {
+  &:where([data-inverted]) {
+    background-color: var(--mantine-neutral-color-0);
+  }
+}
+
+.slider-mark {
+  border-color: var(--mantine-color-default-border);
+
+  &:where([data-filled]) {
+    border-color: var(--slider-color);
+
+    &:where([data-disabled]) {
+      border-color: var(--mantine-color-disabled-border);
+    }
+  }
+}
+
+.slider-mark-label {
+  color: var(--mantine-neutral-color-8);
+}
+
+.tooltip-tooltip {
+  background-color: var(--tooltip-bg, var(--mantine-color-text));
+  color: var(--tooltip-color, var(--mantine-primary-color-light));
+}
+
+.ring-progress-curve {
+  stroke: var(--curve-color, var(--mantine-color-default-border));
+}
+
+.tree-label {
+  &:where([data-selected]) {
+    color: var(--mantine-primary-color-light-active);
+  }
+}
+
+.typography-root {
+  & :where(hr) {
+    border-color: var(--mantine-color-default-border);
+  }
+
+  & :where(pre) {
+    background-color: var(--mantine-neutral-color-0);
+  }
+
+  & :where(kbd) {
+    background-color: var(--mantine-neutral-color-0);
+    border-color: var(--mantine-color-default-border);
+    color: var(--mantine-color-text);
+  }
+
+  & :where(code) {
+    background-color: var(--mantine-neutral-color-0);
+    color: var(--mantine-color-text);
+  }
+
+  & :where(table) {
+    --table-border-color: var(--mantine-color-default-border);
+  }
+
+  & :where(blockquote) {
+    background-color: var(--mantine-primary-color-light-active);
+  }
+}
+
+.accordion-control-default {
+  &:where(:not(:disabled, [data-disabled])) {
+    @mixin hover {
+      background-color: var(--mantine-neutral-color-1);
+    }
+  }
+}
+
+.accordion-item {
+  --item-border-color: var(--mantine-color-default-border);
+  --item-filled-color: var(--mantine-neutral-color-0);
+}
+
+.accordion-item-separated {
+  &[data-active] {
+    background-color: var(--mantine-color-body-secondary);
+  }
+}
+
+.close-button-root {
+  color: var(--mantine-neutral-light-color);
+}
+
+.close-button-root-subtle {
+  &:where(:not(:disabled, [data-disabled])) {
+    @mixin hover {
+      background-color: var(--mantine-neutral-color-1);
+    }
+  }
+}
+
+.input-input {
+  &[data-variant="default"] {
+    border-color: var(--mantine-color-default-border);
+    background-color: var(--mantine-color-body);
+  }
+
+  &[data-variant="filled"] {
+    border-color: transparent;
+    background-color: var(--mantine-neutral-color-0);
+  }
+  &[data-variant="unstyled"] {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &[data-error] {
+    &:not([data-variant="unstyled"]) {
+      border-color: var(--mantine-color-red-8);
+    }
+  }
+  &:focus,
+  &:focus-within {
+    border-color: var(--mantine-neutral-color-6);
+
+    [data-error] & {
+      border-color: var(--mantine-color-red-8);
+    }
+  }
+}
+
+.checkbox-input {
+  background-color: var(--mantine-color-body-secondary);
+  border-color: var(--mantine-color-default-border);
+}
+
+.chip-label {
+  &:where(:not([data-disabled])) {
+    &:where(:not([data-checked])) {
+      background-color: var(--mantine-neutral-color-0) !important;
+      @mixin hover {
+        background-color: var(--mantine-neutral-color-1) !important;
+      }
+    }
+  }
+}
+
+.chip-label-outline {
+  &:where(:not([data-disabled])) {
+    &:where(:not([data-checked])) {
+      border-color: var(--mantine-color-default-border) !important;
+    }
+    &:where([data-checked]) {
+      background-color: var(--mantine-neutral-color-0) !important;
+      @mixin hover {
+        background-color: var(--mantine-neutral-color-1) !important;
+      }
+    }
+  }
+}
+
+.color-picker-swatch {
+  outline: 2px solid var(--mantine-color-default-border) !important;
+}
+
+.color-picker-slider {
+  &:where([data-focus-ring="auto"]) {
+    &:focus:focus-visible {
+      > :last-child {
+        outline: 2px solid var(--mantine-primary-color-3);
+      }
+    }
+  }
+
+  &:where([data-focus-ring="always"]) {
+    &:focus {
+      > :last-child {
+        outline: 2px solid var(--mantine-primary-color-3);
+      }
+    }
+  }
+}
+
+.navlink-root {
+  @mixin hover {
+    background-color: var(--mantine-neutral-color-1);
+  }
+
+  &:where([data-active], [aria-current="page"]) {
+    background-color: var(--nl-bg);
+
+    @mixin hover {
+      background-color: var(--nl-hover);
+    }
+  }
+}
+
+.notification-root {
+  background-color: var(--mantine-neutral-color-0);
+  border-color: var(--mantine-color-default-border);
+}
+
+.notification-title {
+  color: var(--mantine-color-text);
+}
+
+.notification-description {
+  color: var(--mantine-color-text);
+
+  &:where([data-with-title]) {
+    color: var(--mantine-neutral-color-8);
+  }
+}
+
+.number-input-control {
+  border-inline-start-color: var(--mantine-color-default-border);
+
+  @mixin hover {
+    background-color: var(--mantine-primary-color-light-hover);
+  }
+}
+
+.pagination-control {
+  &:where(:not([data-active])) {
+    border-color: var(--mantine-color-default-border);
+    background-color: var(--mantine-neutral-color-0);
+
+    @mixin hover {
+      &:where(:not(:disabled, [data-disabled])) {
+        background-color: var(--mantine-neutral-color-1);
+      }
+    }
+  }
+}
+
+.password-input-visibility-toggle {
+  color: var(--mantine-neutral-color-8);
+
+  @mixin hover {
+    color: var(--mantine-neutral-color-8);
+    background-color: var(--mantine-neutral-color-1);
+  }
+}
+
+.pill-root {
+  background-color: var(--mantine-neutral-color-2);
+  color: var(--mantine-color-text);
+}
+
+.stepper-root {
+  --stepper-outline-color: var(--mantine-color-default-border);
+}
+
+.stepper-separator {
+  background-color: var(--mantine-neutral-color-3);
+
+  &:where([data-active]) {
+    background-color: var(--stepper-color);
+  }
+}
+
+.stepper-vertical-separator {
+  border-color: var(--mantine-neutral-color-3);
+
+  &:where([data-active]) {
+    border-color: var(--stepper-color);
+  }
+}
+
+.stepper-step-icon {
+  border-color: var(--mantine-neutral-color-3);
+  background-color: var(--mantine-neutral-color-3);
+  color: var(--mantine-color-text);
+
+  &:where([data-progress]) {
+    border-color: var(--step-color);
+  }
+
+  &:where([data-completed]) {
+    color: var(--stepper-icon-color, var(--mantine-color-white));
+    background-color: var(--step-color);
+    border-color: var(--step-color);
+  }
+}
+
+.switch-track {
+  --switch-bg-2: var(--mantine-neutral-color-4);
+  background-color: var(--switch-bg-2);
+
+  input:checked + & {
+    --switch-bg-2: var(--switch-color);
+  }
+
+  input:disabled + &,
+  input[data-disabled] + & {
+    --switch-bg-2: var(--mantine-neutral-color-3);
+  }
+}
+
+.switch-thumb {
+  @mixin dark {
+    background-color: var(--switch-thumb-bg-2, var(--mantine-neutral-color-9));
+  }
+  @mixin light {
+    background-color: var(--switch-thumb-bg-2, var(--mantine-neutral-color-0));
+  }
+
+  input:checked + * > & {
+    --switch-thumb-bg-2: var(--mantine-color-white);
+  }
+
+  input:disabled + * > &,
+  input[data-disabled] + * > & {
+    @mixin dark {
+      --switch-thumb-bg-2: var(--mantine-neutral-color-7);
+    }
+    @mixin light {
+      --switch-thumb-bg-2: var(--mantine-neutral-color-0);
+    }
+  }
+
+  &:where([data-with-thumb-indicator])::before {
+    background-color: var(--switch-bg-2);
+  }
+}
+
+.table-of-contents-control {
+  @mixin where-hover {
+    &:where(:not([data-variant="none"])) {
+      background-color: var(--mantine-neutral-color-1);
+    }
+  }
+}
+
+.popover-dropdown {
+  background-color: var(--mantine-neutral-color-0);
+  border-color: var(--mantine-neutral-color-3);
+}
+
+.popover-arrow {
+  border-color: var(--mantine-neutral-color-4);
+}
+
+.color-input-dropdown {
+  background-color: var(--mantine-neutral-color-0);
+  border-color: var(--mantine-neutral-color-3);
+}
+
+.color-input-eye-dropper-button {
+  color: var(--mantine-neutral-color-8);
+
+  @mixin hover {
+    color: var(--mantine-neutral-color-8);
+    background-color: var(--mantine-neutral-color-1);
+  }
+}
+
+.combobox-option {
+  @mixin hover {
+    &:where(:not([data-combobox-selected], [data-combobox-disabled])) {
+      background-color: var(--mantine-neutral-color-1);
+    }
+  }
+}
+
+.combobox-search {
+  &,
+  &:focus {
+    border-color: var(--mantine-color-default-border);
+  }
+
+  background-color: var(--mantine-primary-color-light);
+}
+
+.combobox-header-footer {
+  border-color: var(--mantine-color-default-border);
+}
+
+.combobox-group-label {
+  &::after {
+    background-color: var(--mantine-primary-color-light);
+  }
+}
+
+.menu-divider {
+  border-color: var(--mantine-color-default-border);
+}
+
+.menu-item {
+  &:where(:hover, :focus) {
+    &:where(:not(:disabled, [data-disabled])) {
+      background-color: var(--menu-item-hover, var(--mantine-neutral-color-2));
+    }
+  }
+}

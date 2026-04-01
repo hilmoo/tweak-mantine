@@ -1,0 +1,15 @@
+.root {
+  @mixin light {
+    --average-bar-color: var(--mantine-color-gray-dev-dev-8);
+    --you-bar-color: var(--mantine-color-blue-dev-dev-3);
+  }
+
+  @mixin dark {
+    --you-bar-color: var(--mantine-color-blue-dev-dev-8);
+    --average-bar-color: var(--mantine-color-gray-dev-dev-4);
+  }
+}
+
+.bar {
+  transform: translateX(-1.5px);
+}

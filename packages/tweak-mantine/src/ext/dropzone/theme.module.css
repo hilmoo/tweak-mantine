@@ -1,0 +1,22 @@
+.root {
+  background-color: var(--mantine-color-default);
+  border-color: var(--mantine-color-default-border);
+
+  @mixin hover {
+    &:where([data-activate-on-click]:not([data-loading])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+
+  &:where([data-accept]) {
+    background-color: var(--dropzone-accept-bg);
+    border-color: var(--dropzone-accept-bg);
+    color: var(--dropzone-accept-color);
+  }
+
+  &:where([data-reject]) {
+    background-color: var(--dropzone-reject-bg);
+    border-color: var(--dropzone-reject-bg);
+    color: var(--dropzone-reject-color);
+  }
+}

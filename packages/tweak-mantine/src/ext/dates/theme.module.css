@@ -1,0 +1,81 @@
+/* TODO: Not fully working, still buggy */
+.dayDay {
+  @mixin hover {
+    &:where(:not([data-static], [data-disabled], [data-selected], [data-in-range])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+
+  &:where([data-weekend]) {
+    color: var(--mantine-color-red-6);
+  }
+
+  &:where([data-today][data-highlight-today]:not([data-selected], [data-in-range])) {
+    border: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.calendarHeaderLevelControl {
+  background-color: transparent;
+  @mixin hover {
+    &:where(:not([data-disabled], [data-static], :disabled)) {
+      background-color: var(--mantine-color-default-hover) !important;
+    }
+  }
+}
+
+.datePickerPresetsList {
+  border-color: var(--mantine-color-default-border);
+}
+
+.datePickerPresetButton {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.miniCalendarDay {
+  @mixin hover {
+    &:where(:not([data-disabled], [data-selected])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.miniCalendarControl {
+  @mixin hover {
+    &:where(:not([data-disabled])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.pickerControlPickerControl {
+  @mixin hover {
+    &:where(:not([data-disabled], :disabled)) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.timePickerControlsListGroup {
+  @mixin hover {
+    &:where(:not([data-active])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.timePickerPresetControl {
+  @mixin hover {
+    &:where(:not([data-active])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.timePickerPresetsGroupLabel {
+  &::after {
+    background-color: var(--mantine-color-default-border);
+  }
+}

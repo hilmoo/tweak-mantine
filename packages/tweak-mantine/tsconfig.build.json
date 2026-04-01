@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/lib",
+    "declarationDir": "./dist/lib"
+  },
+  "exclude": ["./lib", "./esm", "./cjs", "**/*.test.tsx", "**/*.test.ts", "**/*.story.tsx"]
+}

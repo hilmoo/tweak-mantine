@@ -1,0 +1,36 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "script:copy-demos": "tsx ./scripts/copy_demos/index.ts",
+    "script:generate-css": "tsx ./scripts/generate-tweak-css/index.ts"
+  },
+  "devDependencies": {
+    "@mantine/core": "^9.0.0",
+    "@mantinex/demo": "workspace:*",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@types/node": "^24.10.9",
+    "@types/react": "^19.2.9",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.27.2",
+    "hash-css-selector": "^1.1.0",
+    "oxfmt": "^0.43.0",
+    "postcss": "^8.5.6",
+    "rollup": "^4.57.0",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "typescript-plugin-css-modules": "^5.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "19.2.3",
+      "react-dom": "19.2.3"
+    }
+  }
+}

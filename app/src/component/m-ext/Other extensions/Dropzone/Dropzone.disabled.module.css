@@ -1,0 +1,15 @@
+.disabled {
+  background-color: light-dark(
+    var(--mantine-color-gray-dev-dev-0),
+    var(--mantine-color-gray-dev-dev-6)
+  );
+  border-color: light-dark(
+    var(--mantine-color-gray-dev-dev-2),
+    var(--mantine-color-gray-dev-dev-5)
+  );
+  cursor: not-allowed;
+
+  & * {
+    color: light-dark(var(--mantine-color-gray-dev-dev-5), var(--mantine-color-gray-dev-dev-3));
+  }
+}

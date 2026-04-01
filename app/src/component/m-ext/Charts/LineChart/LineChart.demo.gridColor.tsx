@@ -1,0 +1,66 @@
+import { LineChart } from "@mantine/charts";
+import { MantineDemo } from "@mantinex/demo";
+import { data, dataCode } from "./_data";
+import classes from "./LineChart.demo.gridColor.module.css";
+
+const cssCode = `
+.root {
+  @mixin light {
+    --chart-grid-color: alpha(var(--mantine-color-black), 0.15);
+    --chart-text-color: var(--mantine-color-gray-dev-dev-7);
+  }
+
+  @mixin dark {
+    --chart-grid-color: alpha(var(--mantine-color-white), 0.15);
+    --chart-text-color: var(--mantine-color-gray-dev-dev-0);
+  }
+}
+`;
+
+const code = `
+import { LineChart } from '@mantine/charts';
+import { data } from './data';
+import classes from './Demo.module.css';
+
+function Demo() {
+  return (
+    <LineChart
+      h={300}
+      data={data}
+      dataKey="date"
+      className={classes.root}
+      series={[
+        { name: 'Apples', color: 'purple-dev-dev.6' },
+        { name: 'Oranges', color: 'blue-dev-dev.6' },
+        { name: 'Tomatoes', color: 'teal-dev-dev.6' },
+      ]}
+    />
+  );
+}
+`;
+
+function Demo() {
+  return (
+    <LineChart
+      h={300}
+      data={data}
+      dataKey="date"
+      className={classes.root}
+      series={[
+        { name: "Apples", color: "purple-dev-dev.6" },
+        { name: "Oranges", color: "blue-dev-dev.6" },
+        { name: "Tomatoes", color: "teal-dev-dev.6" },
+      ]}
+    />
+  );
+}
+
+export const gridColor: MantineDemo = {
+  type: "code",
+  component: Demo,
+  code: [
+    { code: cssCode, language: "scss", fileName: "Demo.module.css" },
+    { code, language: "tsx", fileName: "Demo.tsx" },
+    { code: dataCode, language: "tsx", fileName: "data.ts" },
+  ],
+};
