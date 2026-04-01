@@ -9,10 +9,7 @@ import {
   TWEAK_DATES_THEME,
 } from "./tweak-mantine";
 
-import { TWEAK_GEIST_COLORS as PROD_COLORS } from "./tweak-mantine/color";
-import { TWEAK_GEIST_COLORS as DEV_COLORS } from "./tweak-mantine/color-dev";
-
-export const TWEAK_GEIST_COLORS = import.meta.env.DEV ? DEV_COLORS : PROD_COLORS;
+import { TWEAK_GEIST_COLORS } from "./tweak-mantine/color-dev";
 
 const component = createTheme({
   fontFamily: "Geist",

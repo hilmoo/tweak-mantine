@@ -95,7 +95,7 @@ function RootLayout() {
                     <Title order={3}>Tweak Mantine</Title>
 
                     <Group gap={"xs"} visibleFrom="sm">
-                      <Button component={Link} to="/" variant="default">
+                      <Button component={Link} to={"/"} variant="default">
                         Docs
                       </Button>
                       <Button component={Link} to="/core" variant="default">

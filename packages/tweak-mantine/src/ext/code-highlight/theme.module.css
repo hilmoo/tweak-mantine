@@ -5,9 +5,9 @@
 }
 
 .file {
-  border-color: var(--mantine-color-default-border) !important;
+  border-color: var(--mantine-color-default-border);
 
   &:where([data-active]) {
-    background-color: var(--mantine-color-default) !important;
+    background-color: var(--mantine-color-default);
   }
 }

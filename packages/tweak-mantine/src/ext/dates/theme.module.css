@@ -19,7 +19,7 @@
   background-color: transparent;
   @mixin hover {
     &:where(:not([data-disabled], [data-static], :disabled)) {
-      background-color: var(--mantine-color-default-hover) !important;
+      background-color: var(--mantine-color-default-hover);
     }
   }
 }

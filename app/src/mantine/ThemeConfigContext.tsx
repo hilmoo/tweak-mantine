@@ -1,8 +1,10 @@
 import { useMemo, ReactNode, useContext, createContext, useState } from "react";
 import {
+  getThemeColor,
   MantineColorsTuple,
   MantineProvider,
   mergeThemeOverrides,
+  parseThemeColor,
   virtualColor,
 } from "@mantine/core";
 import { Theme } from "~/mantine/theme";
@@ -10,12 +12,15 @@ import { cssVariablesResolver } from "~/mantine/tweak-mantine";
 import { generateRadixColors } from "~/utils/generateRadixColors";
 
 type ColorMode = "Geist" | "Radix";
+type BackgroundMode = "Geist" | "Radix" | "Custom";
 
 interface ColorConfig {
   backgroundPrimaryDark: string;
   backgroundSecondaryDark: string;
   backgroundPrimaryLight: string;
   backgroundSecondaryLight: string;
+  backgroundMode: BackgroundMode;
+  radixBgParams: { light: string; dark: string };
   colorMode: ColorMode;
   neutralColor: string;
   primaryColor: string;
@@ -27,16 +32,18 @@ export const DEFAULT_COLOR_CONFIG: ColorConfig = {
   backgroundSecondaryDark: "#0A0A0A",
   backgroundPrimaryLight: "#F9FAFB",
   backgroundSecondaryLight: "#FFFFFF",
+  backgroundMode: "Geist",
+  radixBgParams: { light: "#FFFFFF", dark: "#111111" },
   colorMode: "Geist",
-  neutralColor: import.meta.env.DEV ? "gray-dev-dev" : "gray",
-  primaryColor: import.meta.env.DEV ? "blue-dev-dev" : "blue",
-  radixParams: { accent: "#3D63DD", gray: "#8e99ab" },
+  neutralColor: "gray-dev-dev",
+  primaryColor: "blue-dev-dev",
+  radixParams: { accent: "#3D63DD", gray: "#8B8D98" },
 };
 
 interface ThemeConfigContextType {
   config: ColorConfig;
   updateConfig: (updates: Partial<ColorConfig>) => void;
-  themeCode: string; // <-- Add this to expose the generated code
+  themeCode: string;
 }
 
 const ThemeConfigContext = createContext<ThemeConfigContextType | null>(null);
@@ -78,6 +85,37 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
     let activePrimaryColor = config.primaryColor;
     let activeNeutralColor = config.neutralColor;
 
+    let activeBgPrimaryLight = config.backgroundPrimaryLight;
+    let activeBgSecondaryLight = config.backgroundSecondaryLight;
+    let activeBgPrimaryDark = config.backgroundPrimaryDark;
+    let activeBgSecondaryDark = config.backgroundSecondaryDark;
+
+    if (config.backgroundMode === "Geist") {
+      activeBgPrimaryLight = DEFAULT_COLOR_CONFIG.backgroundPrimaryLight;
+      activeBgSecondaryLight = DEFAULT_COLOR_CONFIG.backgroundSecondaryLight;
+      activeBgPrimaryDark = DEFAULT_COLOR_CONFIG.backgroundPrimaryDark;
+      activeBgSecondaryDark = DEFAULT_COLOR_CONFIG.backgroundSecondaryDark;
+    } else if (config.backgroundMode === "Radix") {
+      const radixBgLight = generateRadixColors({
+        appearance: "light",
+        accent: config.radixParams.accent,
+        gray: config.radixParams.gray,
+        background: config.radixBgParams.light,
+      });
+      activeBgPrimaryLight = radixBgLight.grayScale[0];
+      activeBgSecondaryLight = radixBgLight.grayScale[1];
+
+      const radixBgDark = generateRadixColors({
+        appearance: "dark",
+        accent: config.radixParams.accent,
+        gray: config.radixParams.gray,
+        background: config.radixBgParams.dark,
+      });
+      activeBgPrimaryDark = radixBgDark.grayScale[0];
+      activeBgSecondaryDark = radixBgDark.grayScale[1];
+    }
+
+    // --- 2. Resolve Primary & Neutral Colors ---
     const isRadixMode = config.colorMode === "Radix";
 
     if (isRadixMode) {
@@ -85,7 +123,7 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
         appearance: "light",
         accent: config.radixParams.accent,
         gray: config.radixParams.gray,
-        background: config.backgroundPrimaryLight,
+        background: activeBgPrimaryLight, // Feed the resolved background into the generator
       });
 
       colors["radix-primary-light"] = radixLight.accentScale.slice(
@@ -99,12 +137,14 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
         appearance: "dark",
         accent: config.radixParams.accent,
         gray: config.radixParams.gray,
-        background: config.backgroundPrimaryDark,
+        background: activeBgPrimaryDark, // Feed the resolved background into the generator
       });
       colors["radix-primary-dark"] = radixDark.accentScale.slice(
         2,
       ) as unknown as MantineColorsTuple;
-      colors["radix-neutral-dark"] = radixDark.grayScale.slice(2) as unknown as MantineColorsTuple;
+      colors["radix-neutral-dark"] = radixDark.grayScale.slice(
+        2,
+      ) as unknown as MantineColorsTuple;
 
       colors["radix-primary"] = virtualColor({
         name: "radix-primary",
@@ -125,17 +165,26 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
       colors,
       primaryColor: activePrimaryColor,
       other: {
-        colorBackgroundLight: config.backgroundPrimaryLight,
-        colorBackgroundDark: config.backgroundPrimaryDark,
-        colorSecondaryBackgroundLight: config.backgroundSecondaryLight,
-        colorSecondaryBackgroundDark: config.backgroundSecondaryDark,
+        colorBackgroundLight: activeBgPrimaryLight,
+        colorBackgroundDark: activeBgPrimaryDark,
+        colorSecondaryBackgroundLight: activeBgSecondaryLight,
+        colorSecondaryBackgroundDark: activeBgSecondaryDark,
         neutralColor: activeNeutralColor,
       },
     };
 
     const generatedCode = `import { createTheme } from '@mantine/core';
 
-export const mytheme = createTheme(${JSON.stringify(themeOverridePayload, null, 2)});`;
+export const mytheme = createTheme(${JSON.stringify(
+      themeOverridePayload,
+      (_, value) => {
+        if (typeof value === "string") {
+          return value.replace(/-dev-dev/g, "");
+        }
+        return value;
+      },
+      2,
+    )});`;
 
     return {
       dynamicTheme: mergeThemeOverrides(Theme, themeOverridePayload),
