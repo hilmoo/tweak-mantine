@@ -5,6 +5,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/tweak-mantine
     permissions:
       contents: read
       id-token: write
@@ -22,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build package
-        run: pnpm --filter tweak-mantine build
+        run: pnpm build
       - run: pnpm publish --provenance --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
