@@ -4,6 +4,10 @@
   "version": "0.0.2",
   "license": "MIT",
   "author": "hilmo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilmoo/tweak-mantine.git"
+  },
   "type": "module",
   "sideEffects": [
     "*.css"
