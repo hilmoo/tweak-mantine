@@ -1,5 +1,6 @@
 {
   "name": "@hilmoo/tweak-mantine",
+  "description": "tweak mantine theme",
   "version": "0.0.1",
   "license": "MIT",
   "author": "hilmoo",
@@ -7,6 +8,10 @@
   "sideEffects": [
     "*.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilmoo/tweak-mantine.git"
+  },
   "main": "./dist/esm/index.mjs",
   "module": "./dist/esm/index.mjs",
   "types": "./dist/lib/index.d.ts",
@@ -18,6 +23,11 @@
     },
     "./styles/*": "./dist/styles/*"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rollup -c && tsc --project tsconfig.build.json && pnpx tsx ./scripts/copy-styles.ts"
   },
