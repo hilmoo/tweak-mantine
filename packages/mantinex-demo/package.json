@@ -35,7 +35,7 @@
     "build": "rollup -c && tsc --project tsconfig.build.json"
   },
   "devDependencies": {
-    "@hilmoo/tweak-mantine": "workspace:*",
+    "@hilmo/tweak-mantine": "workspace:*",
     "@mantine/code-highlight": ">=8.0.0",
     "@mantine/core": ">=8.0.0",
     "@mantine/hooks": ">=8.0.0",
@@ -44,7 +44,7 @@
     "shiki": "^3.12.2"
   },
   "peerDependencies": {
-    "@hilmoo/tweak-mantine": "workspace:*",
+    "@hilmo/tweak-mantine": "workspace:*",
     "@mantine/code-highlight": ">=8.0.0",
     "@mantine/core": ">=8.0.0",
     "@mantine/hooks": ">=8.0.0",

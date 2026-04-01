@@ -18,7 +18,7 @@ import {
   ActionIcon,
 } from "@mantine/core";
 import { Theme } from "./theme";
-import { cssVariablesResolver } from "@hilmoo/tweak-mantine";
+import { cssVariablesResolver } from "@hilmo/tweak-mantine";
 
 function ThemeShowcase() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

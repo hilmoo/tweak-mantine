@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hilmoo/tweak-mantine": "workspace:*",
+    "@hilmo/tweak-mantine": "workspace:*",
     "@mantine/core": "^9.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"

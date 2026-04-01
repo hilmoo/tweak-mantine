@@ -1,5 +1,5 @@
 import { createTheme, mergeThemeOverrides } from "@mantine/core";
-import { TWEAK_CORE_THEME, TWEAK_GEIST_COLORS } from "@hilmoo/tweak-mantine";
+import { TWEAK_CORE_THEME, TWEAK_GEIST_COLORS } from "@hilmo/tweak-mantine";
 
 const component = createTheme({
   primaryColor: "blue",

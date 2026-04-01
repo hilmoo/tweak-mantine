@@ -16,11 +16,11 @@ function Index() {
         <Text>Choose your package manager:</Text>
         <CodeHighlight
           language="bash"
-          code={`pnpm add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+          code={`pnpm add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
 # or
-npm install @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+npm install @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
 # or
-yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight`}
+yarn add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight`}
         />
 
         <Text>
@@ -33,7 +33,7 @@ yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight`}
         <Title order={3}>1) Import styles once</Title>
         <CodeHighlight
           language="tsx"
-          code={`import "@hilmoo/tweak-mantine/styles/index.css";
+          code={`import "@hilmo/tweak-mantine/styles/index.css";
 // import Mantine extension styles you use, for example:
 import "@mantine/code-highlight/styles.css";`}
         />
@@ -45,7 +45,7 @@ import "@mantine/code-highlight/styles.css";`}
 import {
   TWEAK_GEIST_COLORS,
   TWEAK_CORE_THEME,
-} from "@hilmoo/tweak-mantine";
+} from "@hilmo/tweak-mantine";
 
 const mytheme = createTheme({
   primaryColor: "blue",
@@ -72,7 +72,7 @@ export const theme = mergeThemeOverrides(
         <CodeHighlight
           language="tsx"
           code={`import { MantineProvider } from "@mantine/core";
-import { cssVariablesResolver } from "@hilmoo/tweak-mantine";
+import { cssVariablesResolver } from "@hilmo/tweak-mantine";
 import { theme } from "./theme";
 
 export function App() {

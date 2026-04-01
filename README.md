@@ -5,11 +5,11 @@
 Choose your package manager:
 
 ```bash
-pnpm add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+pnpm add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
 # or
-npm install @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+npm install @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
 # or
-yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+yarn add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
 ```
 
 Optional extension packages should also be installed if you use their tweak themes (for example: charts, dates, dropzone, spotlight, rich text editor).
@@ -21,7 +21,7 @@ Optional extension packages should also be installed if you use their tweak them
 ### 1) Import styles once
 
 ```tsx
-import "@hilmoo/tweak-mantine/styles/index.css";
+import "@hilmo/tweak-mantine/styles/index.css";
 // import Mantine extension styles you use, for example:
 import "@mantine/code-highlight/styles.css";
 ```
@@ -33,7 +33,7 @@ import { createTheme, mergeThemeOverrides } from "@mantine/core";
 import {
   TWEAK_GEIST_COLORS,
   TWEAK_CORE_THEME,
-} from "@hilmoo/tweak-mantine";
+} from "@hilmo/tweak-mantine";
 
 const mytheme = createTheme({
   primaryColor: "blue",
@@ -60,7 +60,7 @@ export const theme = mergeThemeOverrides(
 
 ```tsx
 import { MantineProvider } from "@mantine/core";
-import { cssVariablesResolver } from "@hilmoo/tweak-mantine";
+import { cssVariablesResolver } from "@hilmo/tweak-mantine";
 import { theme } from "./theme";
 
 export function App() {
