@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Tweak Mantine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Install
 
-Currently, two official plugins are available:
+Choose your package manager:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+pnpm add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+# or
+npm install @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
+# or
+yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Optional extension packages should also be installed if you use their tweak themes (for example: charts, dates, dropzone, spotlight, rich text editor).
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## Setup
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+### 1) Import styles once
+
+```tsx
+import "@hilmoo/tweak-mantine/styles/index.css";
+// import Mantine extension styles you use, for example:
+import "@mantine/code-highlight/styles.css";
 ```
+
+### 2) Create merged theme
+
+```tsx
+import { createTheme, mergeThemeOverrides } from "@mantine/core";
+import {
+  TWEAK_GEIST_COLORS,
+  TWEAK_CORE_THEME,
+} from "@hilmoo/tweak-mantine";
+
+const mytheme = createTheme({
+  primaryColor: "blue",
+  white: "hsla(0,0%,93%,1)",
+  black: "hsla(0,0%,9%,1)",
+  other: {
+    colorBackgroundLight: "hsla(0,0%,98%,1)",
+    colorBackgroundDark: "hsla(0,0%,0%,1)",
+    colorSecondaryBackgroundLight: "hsla(0,0%,100%,1)",
+    colorSecondaryBackgroundDark: "hsla(0,0%,4%,1)",
+    neutralColor: "gray",
+  },
+});
+
+export const theme = mergeThemeOverrides(
+  TWEAK_GEIST_COLORS,
+  TWEAK_CORE_THEME,
+  // add extension tweaks you use, e.g. TWEAK_CODE_HIGHLIGHT_THEME
+  mytheme,
+);
+```
+
+### 3) Configure MantineProvider
+
+```tsx
+import { MantineProvider } from "@mantine/core";
+import { cssVariablesResolver } from "@hilmoo/tweak-mantine";
+import { theme } from "./theme";
+
+export function App() {
+  return (
+    <MantineProvider 
+      theme={theme} 
+      cssVariablesResolver={cssVariablesResolver} 
+      deduplicateCssVariables={false}
+    >
+      {/* app */}
+    </MantineProvider>
+  );
+}
+```
+
+## Notes
+
+* All colors used in the demo come from `TWEAK_GEIST_COLORS`. If you want to use these colors, you should merge them into your theme.
+* You should remove the `-dev-dev` prefix from the colors when copying from the demo, it is only for development purposes.
+* For an example app, you can check [here](https://github.com/hilmoo/tweak-mantine/tree/main/packages/example).

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Container, Stack, Text, Title } from "@mantine/core";
+import { Anchor, Code, Container, List, Stack, Text, Title } from "@mantine/core";
 import { CodeHighlight } from "@mantine/code-highlight";
 
 export const Route = createFileRoute("/")({
@@ -83,6 +83,26 @@ export function App() {
   );
 }`}
         />
+        <Title order={2}>Notes</Title>
+        <List>
+          <List.Item>
+            All colors used in the demo come from <Code>TWEAK_GEIST_COLORS</Code>. If you want to
+            use these colors, you should merge them into your theme.
+          </List.Item>
+          <List.Item>
+            You should remove the <Code>-dev-dev</Code> prefix from the colors when copying from the
+            demo, it is only for development purposes.
+          </List.Item>
+          <List.Item>
+            For an example app, you can check{" "}
+            <Anchor
+              href="https://github.com/hilmoo/tweak-mantine/tree/main/packages/example"
+              target="_blank"
+            >
+              here
+            </Anchor>
+          </List.Item>
+        </List>
       </Stack>
     </Container>
   );
