@@ -90,7 +90,7 @@ export function App() {
             use these colors, you should merge them into your theme.
           </List.Item>
           <List.Item>
-            You should remove the <Code>-dev-dev</Code> prefix from the colors when copying from the
+            You should remove the <Code>-dev-dev</Code> suffix from the colors when copying from the
             demo, it is only for development purposes.
           </List.Item>
           <List.Item>

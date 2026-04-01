@@ -1,10 +1,5 @@
 # Tweak Mantine
 
-An opinionated Mantine theme configuration based on [Geist Colors](https://vercel.com/geist/colors).
-
-> [!IMPORTANT]
-> This package is still under heavy development. Please open an issue if you find a bug.
-
 ## Install
 
 Choose your package manager:
@@ -17,7 +12,7 @@ npm install @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
 yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
 ```
 
-> **Note:** Install optional extension packages if you plan to use their tweak themes (for example: charts, dates, dropzone, spotlight, or rich text editor).
+Optional extension packages should also be installed if you use their tweak themes (for example: charts, dates, dropzone, spotlight, rich text editor).
 
 ---
 
@@ -25,17 +20,13 @@ yarn add @hilmoo/tweak-mantine @mantine/core @mantine/code-highlight
 
 ### 1) Import styles once
 
-Add these imports to your main entry file:
-
 ```tsx
 import "@hilmoo/tweak-mantine/styles/index.css";
-// Import Mantine extension styles you use, for example:
+// import Mantine extension styles you use, for example:
 import "@mantine/code-highlight/styles.css";
 ```
 
-### 2) Create a merged theme
-
-Combine your custom configuration with the Tweak presets:
+### 2) Create merged theme
 
 ```tsx
 import { createTheme, mergeThemeOverrides } from "@mantine/core";
@@ -44,7 +35,7 @@ import {
   TWEAK_CORE_THEME,
 } from "@hilmoo/tweak-mantine";
 
-const myTheme = createTheme({
+const mytheme = createTheme({
   primaryColor: "blue",
   white: "hsla(0,0%,93%,1)",
   black: "hsla(0,0%,9%,1)",
@@ -60,14 +51,12 @@ const myTheme = createTheme({
 export const theme = mergeThemeOverrides(
   TWEAK_GEIST_COLORS,
   TWEAK_CORE_THEME,
-  // Add extension tweaks you use, e.g. TWEAK_CODE_HIGHLIGHT_THEME
-  myTheme,
+  // add extension tweaks you use, e.g. TWEAK_CODE_HIGHLIGHT_THEME
+  mytheme,
 );
 ```
 
 ### 3) Configure MantineProvider
-
-Pass the `theme` and `cssVariablesResolver` to the provider:
 
 ```tsx
 import { MantineProvider } from "@mantine/core";
@@ -86,3 +75,11 @@ export function App() {
   );
 }
 ```
+
+---
+
+## Notes
+
+* All colors used in the demo come from `TWEAK_GEIST_COLORS`. If you want to use these colors, you should merge them into your theme.
+* You should remove the `-dev-dev` suffix from the colors when copying from the demo, it is only for development purposes.
+* For an example app, you can check [here](https://github.com/hilmoo/tweak-mantine/tree/main/packages/example).
