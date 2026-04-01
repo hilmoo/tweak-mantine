@@ -48,6 +48,10 @@ jobs:
       - name: Build mantinex-demo
         working-directory: packages/mantinex-demo
         run: pnpm run build
+      
+      - name: Build tweak-mantine
+        working-directory: packages/tweak-mantine
+        run: pnpm run build
 
       - name: Build App
         working-directory: app
