@@ -1,5 +1,10 @@
 # Tweak Mantine
 
+An opinionated Mantine theme configuration based on [Geist Colors](https://vercel.com/geist/colors).
+
+> [!IMPORTANT]
+> This package is still under heavy development. Please open an issue if you find a bug.
+
 ## Install
 
 Choose your package manager:
