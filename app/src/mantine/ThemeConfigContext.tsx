@@ -1,10 +1,8 @@
 import { useMemo, ReactNode, useContext, createContext, useState } from "react";
 import {
-  getThemeColor,
   MantineColorsTuple,
   MantineProvider,
   mergeThemeOverrides,
-  parseThemeColor,
   virtualColor,
 } from "@mantine/core";
 import { Theme } from "~/mantine/theme";
