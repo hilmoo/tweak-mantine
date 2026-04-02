@@ -136,21 +136,21 @@ export function ColorConfigurator() {
       {config.colorMode === "Radix" && (
         <Stack gap="sm">
           <ColorInput
-            label="Neutral Base"
-            value={config.radixParams.gray}
+            label="Primary Base (Accent)"
+            value={config.radixParams.accent}
             onChange={(val) =>
               updateConfig({
-                radixParams: { ...config.radixParams, gray: val },
+                radixParams: { ...config.radixParams, accent: val },
               })
             }
             format="hex"
           />
           <ColorInput
-            label="Accent Base"
-            value={config.radixParams.accent}
+            label="Neutral Base"
+            value={config.radixParams.gray}
             onChange={(val) =>
               updateConfig({
-                radixParams: { ...config.radixParams, accent: val },
+                radixParams: { ...config.radixParams, gray: val },
               })
             }
             format="hex"
