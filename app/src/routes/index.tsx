@@ -77,7 +77,7 @@ import { theme } from "./theme";
 
 export function App() {
   return (
-    <MantineProvider theme={theme} cssVariablesResolver={cssVariablesResolver} deduplicateCssVariables={false}>
+    <MantineProvider theme={theme} cssVariablesResolver={cssVariablesResolver}>
       {/* app */}
     </MantineProvider>
   );

@@ -2,10 +2,15 @@ import { createTheme } from "@mantine/core";
 import {
   Calendar,
   CalendarHeader,
+  DateInput,
   DatePicker,
+  DatePickerInput,
+  DateTimePicker,
   Day,
   MiniCalendar,
   Month,
+  MonthPicker,
+  MonthPickerInput,
   PickerControl,
   TimePicker,
 } from "@mantine/dates";
@@ -17,6 +22,7 @@ export const TWEAK_DATES_THEME = createTheme({
       classNames: {
         calendarHeaderControl: style.calendarHeaderLevelControl,
         calendarHeaderLevel: style.calendarHeaderLevelControl,
+        day: style.dayDay,
       },
     }),
     CalendarHeader: CalendarHeader.extend({
@@ -44,9 +50,6 @@ export const TWEAK_DATES_THEME = createTheme({
       classNames: {
         presetsList: style.datePickerPresetsList,
         presetButton: style.datePickerPresetButton,
-        calendarHeaderControl: style.calendarHeaderLevelControl,
-        calendarHeaderLevel: style.calendarHeaderLevelControl,
-        day: style.dayDay,
       },
     }),
     MiniCalendar: MiniCalendar.extend({
@@ -60,6 +63,46 @@ export const TWEAK_DATES_THEME = createTheme({
         controlsListGroup: style.timePickerControlsListGroup,
         presetControl: style.timePickerPresetControl,
         presetsGroupLabel: style.timePickerPresetsGroupLabel,
+      },
+    }),
+    DateInput: DateInput.extend({
+      classNames: {
+        day: style.dayDay,
+        calendarHeaderControl: style.calendarHeaderLevelControl,
+        calendarHeaderLevel: style.calendarHeaderLevelControl,
+      },
+    }),
+    DatePickerInput: DatePickerInput.extend({
+      classNames: {
+        day: style.dayDay,
+        calendarHeaderControl: style.calendarHeaderLevelControl,
+        calendarHeaderLevel: style.calendarHeaderLevelControl,
+        presetsList: style.datePickerPresetsList,
+        presetButton: style.datePickerPresetButton,
+      },
+    }),
+    DateTimePicker: DateTimePicker.extend({
+      classNames: {
+        day: style.dayDay,
+        calendarHeaderControl: style.calendarHeaderLevelControl,
+        calendarHeaderLevel: style.calendarHeaderLevelControl,
+        // @ts-ignore
+        presetsList: style.datePickerPresetsList,
+        presetButton: style.datePickerPresetButton,
+      },
+    }),
+    MonthPicker: MonthPicker.extend({
+      classNames: {
+        monthsListControl: style.dayDay,
+        calendarHeaderControl: style.calendarHeaderLevelControl,
+        calendarHeaderLevel: style.calendarHeaderLevelControl,
+      },
+    }),
+    MonthPickerInput: MonthPickerInput.extend({
+      classNames: {
+        monthsListControl: style.dayDay,
+        calendarHeaderControl: style.calendarHeaderLevelControl,
+        calendarHeaderLevel: style.calendarHeaderLevelControl,
       },
     }),
   },

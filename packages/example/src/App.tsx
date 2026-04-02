@@ -132,7 +132,6 @@ export function App() {
     <MantineProvider
       theme={Theme}
       cssVariablesResolver={cssVariablesResolver}
-      deduplicateCssVariables={false}
       defaultColorScheme="auto"
     >
       <ThemeShowcase />

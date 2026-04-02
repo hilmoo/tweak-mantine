@@ -274,6 +274,8 @@
 }
 
 .input-input {
+  border: rem(1px) solid;
+
   &[data-variant="default"] {
     border-color: var(--mantine-color-default-border);
     background-color: var(--mantine-color-body);

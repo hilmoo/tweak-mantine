@@ -73,7 +73,6 @@ export function App() {
     <MantineProvider 
       theme={theme} 
       cssVariablesResolver={cssVariablesResolver} 
-      deduplicateCssVariables={false}
     >
       {/* app */}
     </MantineProvider>

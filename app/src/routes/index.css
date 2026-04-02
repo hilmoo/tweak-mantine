@@ -45,9 +45,12 @@
 @import "@mantine/core/styles/CheckboxCard.css";
 @import "@mantine/core/styles/CheckboxIndicator.css";
 @import "@mantine/core/styles/InlineInput.css";
+@import "@mantine/dates/styles.css";
+@import "@mantine/charts/styles.css";
 @import "@mantine/core/styles/SegmentedControl.css";
 @import "@mantine/core/styles/Card.css";
 @import "@mantine/core/styles/Affix.css";
+@import "@mantine/nprogress/styles.css";
 @import "@mantine/core/styles/Anchor.css";
 @import "@mantine/core/styles/ModalBase.css";
 @import "@mantine/core/styles/Slider.css";
@@ -61,9 +64,13 @@
 @import "@mantine/core/styles/Button.css";
 @import "@mantine/core/styles/Tabs.css";
 @import "@mantine/core/styles/CloseButton.css";
+@import "@mantine/code-highlight/styles.css";
+@import "@mantine/tiptap/styles.css";
+@import "@mantine/carousel/styles.css";
 @import "@mantine/core/styles/Spoiler.css";
 @import "@mantine/core/styles/Modal.css";
 @import "@mantine/core/styles/Drawer.css";
+@import "@mantine/dropzone/styles.css";
 @import "@mantine/core/styles/RingProgress.css";
 @import "@mantine/core/styles/NavLink.css";
 @import "@mantine/core/styles/Notification.css";
@@ -72,8 +79,10 @@
 @import "@mantine/core/styles/Input.css";
 @import "@mantine/core/styles/Dialog.css";
 @import "@mantine/core/styles/Popover.css";
+@import "@mantine/notifications/styles.css";
 @import "@mantine/core/styles/Radio.css";
 @import "@mantine/core/styles/Switch.css";
+@import "@mantine/spotlight/styles.css";
 @import "@mantine/core/styles/Checkbox.css";
 @import "@mantine/core/styles/Menu.css";
 @import "@mantine/core/styles/PasswordInput.css";

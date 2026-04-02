@@ -1,0 +1,144 @@
+.dayView-dayView {
+  --day-view-border-color: var(--mantine-color-default-border);
+  --day-view-business-hours-bg: var(--mantine-color-default-color);
+  --day-view-non-business-hours-bg: var(--mantine-color-disabled-color);
+}
+
+.dayView-dayViewSlot {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+
+  &:where([data-drop-target]) {
+    background-color: var(--mantine-primary-color-light);
+
+    &::before {
+      border-color: var(--mantine-primary-color-filled-hover);
+    }
+  }
+}
+
+.monthView-monthView {
+  --month-view-border-color: var(--mantine-color-default-border);
+}
+
+.monthView-monthViewWeekNumber {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.monthView-monthViewDay {
+  &:where([data-weekend]) {
+    color: var(--mantine-color-red-6);
+  }
+
+  @mixin hover {
+    &:where(:not([data-static])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+
+  &:where([data-drop-target]) {
+    background-color: var(--mantine-primary-color-light);
+
+    &::before {
+      border-color: var(--mantine-primary-color-light-hover);
+    }
+  }
+}
+
+.mobileMonthView-mobileMonthView {
+  --mobile-month-view-border-color: var(--mantine-color-default-border);
+}
+
+.mobileMonthView-mobileMonthViewWeekNumber {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.mobileMonthView-mobileMonthViewDay {
+  &:where([data-weekend]) {
+    color: var(--mantine-color-red-6);
+  }
+
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+
+  &:where([data-today]:not([data-selected])) {
+    &::before {
+      background-color: var(--mantine-color-disabled);
+      @mixin hover {
+        &::before {
+          border-color: var(--mantine-color-disabled-border);
+        }
+      }
+    }
+  }
+}
+
+.mobileMonthView-mobileMonthViewEvent {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.weekView-weekView {
+  --week-view-border-color: var(--mantine-color-default-border);
+  --week-view-business-hours-bg: var(--mantine-color-default-color);
+  --week-view-non-business-hours-bg: var(--mantine-color-disabled-color);
+}
+
+.weekView-weekViewDayLabel {
+  &:where([data-weekend]) {
+    color: var(--mantine-color-red-6);
+  }
+
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.weekView-weekViewDaySlot {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+
+  &:where([data-drop-target]) {
+    background-color: var(--mantine-primary-color-light);
+
+    &::before {
+      border-color: var(--mantine-primary-color-light-hover);
+    }
+  }
+}
+
+.yearView-yearView {
+  --year-view-border-color: var(--mantine-color-default-border);
+}
+
+.yearView-yearViewWeekNumber {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+.yearView-yearViewDay {
+  &:where([data-weekend]) {
+    color: var(--mantine-color-red-6);
+  }
+
+  @mixin hover {
+    &:where(:not([data-today], [data-day-placeholder])) {
+      background-color: var(--mantine-color-default-hover);
+    }
+  }
+}
+
+.yearView-yearViewMonthCaption {
+  @mixin hover {
+    background-color: var(--mantine-color-default-hover);
+  }
+}

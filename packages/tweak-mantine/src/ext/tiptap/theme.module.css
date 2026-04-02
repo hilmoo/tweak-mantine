@@ -5,7 +5,6 @@
 .content {
   & :global(pre) {
     background-color: var(--mantine-color-body-secondary);
-    color: var(--mantine-color-placeholder);
   }
 }
 

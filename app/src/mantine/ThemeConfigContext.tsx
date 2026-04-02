@@ -113,7 +113,6 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
       activeBgSecondaryDark = radixBgDark.grayScale[1];
     }
 
-    // --- 2. Resolve Primary & Neutral Colors ---
     const isRadixMode = config.colorMode === "Radix";
 
     if (isRadixMode) {
@@ -121,7 +120,7 @@ export function ThemeConfigProvider({ children }: { children: ReactNode }) {
         appearance: "light",
         accent: config.radixParams.accent,
         gray: config.radixParams.gray,
-        background: activeBgPrimaryLight, // Feed the resolved background into the generator
+        background: activeBgPrimaryLight,
       });
 
       colors["radix-primary-light"] = radixLight.accentScale.slice(
@@ -195,7 +194,6 @@ export const mytheme = createTheme(${JSON.stringify(
       <MantineProvider
         theme={dynamicTheme}
         cssVariablesResolver={cssVariablesResolver}
-        deduplicateCssVariables={false}
       >
         {children}
       </MantineProvider>

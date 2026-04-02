@@ -67,6 +67,7 @@ export const cssVariablesResolver: CSSVariablesResolver = (theme) => {
       "--mantine-color-disabled": `var(--mantine-color-${neutralColor}-0)`,
       "--mantine-color-disabled-color": `var(--mantine-color-${neutralColor}-6)`,
       "--mantine-color-disabled-border": `var(--mantine-color-${neutralColor}-4)`,
+      "--mantine-color-error": `var(--mantine-color-red-6)`,
     },
     light: {
       "--mantine-color-scheme": "light",

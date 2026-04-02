@@ -13,6 +13,7 @@ export default {
     "src/ext/dropzone/theme.ts",
     "src/ext/spotlight/theme.ts",
     "src/ext/tiptap/theme.ts",
+    "src/ext/schedule/theme.ts",
   ],
   output: [
     {

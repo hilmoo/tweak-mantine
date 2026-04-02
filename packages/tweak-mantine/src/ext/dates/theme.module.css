@@ -2,7 +2,13 @@
 .dayDay {
   @mixin hover {
     &:where(:not([data-static], [data-disabled], [data-selected], [data-in-range])) {
-      background-color: var(--mantine-color-default-hover);
+      @mixin light {
+        background-color: var(--mantine-color-default-hover);
+      }
+
+      @mixin dark {
+        background-color: var(--mantine-color-default-hover);
+      }
     }
   }
 
@@ -15,7 +21,7 @@
   }
 }
 
-.calendarHeaderLevelControl {
+.calendarHeaderLevelControl.calendarHeaderLevelControl {
   background-color: transparent;
   @mixin hover {
     &:where(:not([data-disabled], [data-static], :disabled)) {
