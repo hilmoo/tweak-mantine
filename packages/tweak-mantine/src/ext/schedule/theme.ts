@@ -1,10 +1,8 @@
 import { createTheme } from "@mantine/core";
-import { parseColor } from "../../color-function/parseHelper";
 import {
   DayView,
   MobileMonthView,
   MonthView,
-  Schedule,
   WeekView,
   YearView,
 } from "@mantine/schedule";
