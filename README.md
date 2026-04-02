@@ -10,11 +10,11 @@ An opinionated Mantine theme configuration based on [Geist Colors](https://verce
 Choose your package manager:
 
 ```bash
-pnpm add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
+pnpm add @hilmo/tweak-mantine @mantine/core
 # or
-npm install @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
+npm install @hilmo/tweak-mantine @mantine/core
 # or
-yarn add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
+yarn add @hilmo/tweak-mantine @mantine/core
 ```
 
 Optional extension packages should also be installed if you use their tweak themes (for example: charts, dates, dropzone, spotlight, rich text editor).

@@ -16,11 +16,11 @@ function Index() {
         <Text>Choose your package manager:</Text>
         <CodeHighlight
           language="bash"
-          code={`pnpm add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
+          code={`pnpm add @hilmo/tweak-mantine @mantine/core
 # or
-npm install @hilmo/tweak-mantine @mantine/core @mantine/code-highlight
+npm install @hilmo/tweak-mantine @mantine/core
 # or
-yarn add @hilmo/tweak-mantine @mantine/core @mantine/code-highlight`}
+yarn add @hilmo/tweak-mantine @mantine/core`}
         />
 
         <Text>
