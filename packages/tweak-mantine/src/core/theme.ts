@@ -615,6 +615,7 @@ export const TWEAK_CORE_THEME = createTheme({
     Autocomplete: Autocomplete.extend({
       classNames: {
         option: style["combobox-option"],
+        input: style["input-input"],
       },
     }),
     HoverCard: HoverCard.extend({
@@ -633,17 +634,20 @@ export const TWEAK_CORE_THEME = createTheme({
     MultiSelect: MultiSelect.extend({
       classNames: {
         option: style["combobox-option"],
+        input: style["input-input"],
       },
     }),
     // NativeSelect
     Select: Select.extend({
       classNames: {
         option: style["combobox-option"],
+        input: style["input-input"],
       },
     }),
     TagsInput: TagsInput.extend({
       classNames: {
         option: style["combobox-option"],
+        input: style["input-input"],
       },
     }),
   },
