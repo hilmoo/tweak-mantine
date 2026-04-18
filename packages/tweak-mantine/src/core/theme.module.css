@@ -77,7 +77,7 @@
 
 .paper-root {
   &:where([data-with-border]) {
-    border: rem(1px) solid var(--mantine-color-default-border);
+    border: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border);
   }
 }
 
@@ -274,7 +274,7 @@
 }
 
 .input-input {
-  border: rem(1px) solid;
+  border: calc(0.0625rem * var(--mantine-scale)) solid;
 
   &[data-variant="default"] {
     border-color: var(--mantine-color-default-border);
