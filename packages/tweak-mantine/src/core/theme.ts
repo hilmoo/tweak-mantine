@@ -211,9 +211,21 @@ export const TWEAK_CORE_THEME = createTheme({
     // NumberFormatter
     // Overlay
     Paper: Paper.extend({
-      classNames: {
-        root: style["paper-root"],
-      },
+      // @ts-expect-error Mantine types are not up to date
+      vars: (theme, props) => ({
+        root: {
+          "--paper-border-color": parseColor({
+            // @ts-expect-error Mantine types are not up to date
+            color: props.color,
+            theme,
+            shade: 3,
+            fallback: "var(--mantine-color-default-border)",
+          }),
+        },
+      }),
+      // classNames: {
+      //   root: style["paper-root"],
+      // },
     }),
     Card: Card.extend({
       classNames: {
