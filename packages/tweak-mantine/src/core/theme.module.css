@@ -508,49 +508,51 @@
 }
 
 .textarea-wrapper {
-  scrollbar-width: thin;
+  textarea {
+    scrollbar-width: thin;
 
-  @mixin where-light {
-    scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
-  }
-
-  @mixin where-dark {
-    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
-  }
-
-  &::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-    background-color: transparent;
-
-    @mixin hover {
-      background-color: var(--mantine-color-body-secondary);
+    @mixin where-light {
+      scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
     }
-  }
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-  }
+    @mixin where-dark {
+      scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+    }
 
-  @mixin where-light {
+    &::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+
+      @mixin hover {
+        background-color: var(--mantine-color-body-secondary);
+      }
+    }
+
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
     }
 
-    &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-  }
+    @mixin where-light {
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
 
-  @mixin where-dark {
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.4);
+      &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
 
-    &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.5);
+    @mixin where-dark {
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
     }
   }
 }
