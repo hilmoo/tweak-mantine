@@ -294,8 +294,8 @@
       border-color: var(--mantine-color-red-8);
     }
   }
-  &:focus,
-  &:focus-within {
+  &:not([data-variant="unstyled"]):focus,
+  &:not([data-variant="unstyled"]):focus-within {
     border-color: var(--mantine-neutral-color-6);
 
     [data-error] & {
@@ -503,6 +503,54 @@
   @mixin where-hover {
     &:where(:not([data-variant="none"])) {
       background-color: var(--mantine-neutral-color-1);
+    }
+  }
+}
+
+.textarea-wrapper {
+  scrollbar-width: thin;
+
+  @mixin where-light {
+    scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+  }
+
+  @mixin where-dark {
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+
+    @mixin hover {
+      background-color: var(--mantine-color-body-secondary);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  @mixin where-light {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @mixin where-dark {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &::-webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 }

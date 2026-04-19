@@ -54,6 +54,7 @@ import {
   TableOfContents,
   Tabs,
   TagsInput,
+  Textarea,
   Timeline,
   Tooltip,
   Tree,
@@ -587,7 +588,11 @@ export const TWEAK_CORE_THEME = createTheme({
       }),
     }),
     // TextInput
-    // Textarea
+    Textarea: Textarea.extend({
+      classNames: {
+        wrapper: style["textarea-wrapper"],
+      },
+    }),
     // JsonInput
     // VisuallyHidden
     // FocusTrap
