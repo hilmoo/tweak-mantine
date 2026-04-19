@@ -16,6 +16,7 @@ import {
   Slider,
   useMantineColorScheme,
   ActionIcon,
+  Textarea,
 } from "@mantine/core";
 import { Theme } from "./theme";
 import { cssVariablesResolver } from "@hilmo/tweak-mantine";
@@ -68,6 +69,7 @@ function ThemeShowcase() {
             </Title>
             <Stack gap="md">
               <TextInput label="Standard Input" placeholder="Focus me to see the ring color" />
+              <Textarea label="Textarea" placeholder="Focus me to see the ring color" />
               <Group>
                 <Checkbox label="Checkbox" defaultChecked />
                 <Radio label="Radio" defaultChecked />

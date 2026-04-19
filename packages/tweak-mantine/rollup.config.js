@@ -1,20 +1,22 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 import esbuild from "rollup-plugin-esbuild";
-import { generateScopedName } from "hash-css-selector";
 import path from "node:path";
+import { createGenerateScopedName } from "hash-css-selector";
 
-export default {
-  input: [
-    "src/index.ts",
-    "src/ext/charts/theme.ts",
-    "src/ext/code-highlight/theme.ts",
-    "src/ext/dates/theme.ts",
-    "src/ext/dropzone/theme.ts",
-    "src/ext/spotlight/theme.ts",
-    "src/ext/tiptap/theme.ts",
-    "src/ext/schedule/theme.ts",
-  ],
+const entries = {
+  core: "src/index.ts",
+  charts: "src/ext/charts/theme.ts",
+  "code-highlight": "src/ext/code-highlight/theme.ts",
+  dates: "src/ext/dates/theme.ts",
+  dropzone: "src/ext/dropzone/theme.ts",
+  spotlight: "src/ext/spotlight/theme.ts",
+  tiptap: "src/ext/tiptap/theme.ts",
+  schedule: "src/ext/schedule/theme.ts",
+};
+
+export default Object.entries(entries).map(([name, inputPath]) => ({
+  input: inputPath,
   output: [
     {
       dir: "dist",
@@ -37,11 +39,13 @@ export default {
   },
   plugins: [
     postcss({
-      modules: { generateScopedName },
+      extract: path.resolve(`dist/styles/${name}.css`),
+      modules: { generateScopedName: createGenerateScopedName("tm") },
+      minimize: true,
     }),
     nodeResolve({ extensions: [".ts", ".tsx", ".js", ".jsx"] }),
     esbuild({
       target: "esnext",
     }),
   ],
-};
+}));
